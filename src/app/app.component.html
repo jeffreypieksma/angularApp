@@ -1,17 +1,18 @@
-<div style="text-align:center">
-  <h1> Welcome to {{ title }}!</h1>
 
-<input type="text" [(ngModel)]="name">
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>My custom Angular app</span>
+  </mat-toolbar-row>
 
-<p>{{name}}</p>
+  <mat-toolbar-row>
+    <span>Third Line</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon" [matMenuTriggerFor]="menu"><i class="material-icons menu">menu</i></mat-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
 
-<hr> 
 <app-servers></app-servers>
-
-
-<div class="col-xs-12">
-  <button (click)="togglePara($event)">Display Details</button>
-  <p *ngIf="showPara">Secret password = tuna</p>
-  <!-- <p *ngFor="let events of eventsArray">{‌{events}}</p> -->
-</div>
-
