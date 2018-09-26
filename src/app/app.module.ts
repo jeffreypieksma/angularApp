@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ServersComponent } from './servers/servers.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { TestComponent } from './test/test.component';
 import { ServerComponent} from './server/server.component';
 
 import { RecipesComponent } from './recipes/recipes.component';
@@ -28,7 +27,6 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
     ServersComponent,
     ServerComponent,
     NotFoundComponent,
-    TestComponent,
     RecipesComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,

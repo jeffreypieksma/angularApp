@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { ServerComponent} from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { TestComponent } from './test/test.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
@@ -19,7 +18,6 @@ const appRoutes: Routes = [
   { path: 'server',      component: ServerComponent},
   { path: 'shopping-list',      component: ShoppingListComponent},
   { path: 'recipes',      component: RecipesComponent},
-  { path: 'test',      component: TestComponent},
   { path: '**', component: NotFoundComponent }
 ];
 
