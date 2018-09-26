@@ -43,12 +43,10 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule
-    
   ],
   exports: [
     RouterModule
   ],
-  
   providers: [],
   bootstrap: [AppComponent]
 })
