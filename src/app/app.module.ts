@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { Routes, RouterModule } from '@angular/router';
@@ -19,6 +19,9 @@ import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/sh
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { ArticleService } from './articles/articles.service';
 
 @NgModule({
   declarations: [
@@ -32,11 +35,14 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
     ShoppingListEditComponent,
     RecipeItemComponent,
     RecipeDetailComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    SidenavComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule,
@@ -45,7 +51,7 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
   exports: [
     RouterModule
   ],
-  providers: [],
+  providers: [ArticleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

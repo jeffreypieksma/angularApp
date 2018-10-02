@@ -1,4 +1,6 @@
-export class Recipe{
+//http://localhost/api/articles
+
+export class Article{
     public name: string;
     public description: string;
     public imagePath: string;
