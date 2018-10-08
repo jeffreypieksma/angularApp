@@ -1,13 +1,17 @@
 //http://localhost/api/articles
 
 export class Article{
-    public name: string;
-    public description: string;
-    public imagePath: string;
+    // public title: string;
+    // public content: string;
 
-    constructor(name: string, description: string, imagePath: string){
-        this.name = name;
-        this.description = description;
-        this.imagePath = imagePath;
-    }
+    // constructor(title: string, content: string){
+    //     this.title = title;
+    //     this.content = content;
+
+    // }
+
+    constructor(
+        public title: string,
+        public content: string,
+      ) {  }
 }

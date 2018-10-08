@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api_token: 'fVnj8zmIuuStxdkdKc0cUpo4dZ7miVh6XxOXSmehPaRACO78Q64dQXibrKRF',
+  api_url: 'http://laravelAPI.local/api/'
 };
 
 /*

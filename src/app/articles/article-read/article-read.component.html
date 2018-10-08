@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <h2>{{article.title}}</h2>
+        <p>{{article.content}}</p>
+    </div>
+  </div>
+  
+<a routerLink="/article/update/{{id}}">
+  <button mat-fab>
+      
+    <mat-icon aria-label="Example icon-button with a heart icon">
+      <!-- For IE9 or below. -->
+      <i class="material-icons">
+          update
+      </i>
+    </mat-icon>
+    
+  </button>
+</a>
