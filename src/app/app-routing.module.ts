@@ -24,7 +24,7 @@ import { AdminComponent } from './auth/admin/admin.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/recipes', pathMatch: 'full'},
+  { path: '', redirectTo: '/articles', pathMatch: 'full'},
   { path: 'articles',      component: ArticlesComponent},
   { path: 'article/read/:id',      component: ArticleReadComponent},
   { path: 'article/create',      component: ArticleCreateComponent},

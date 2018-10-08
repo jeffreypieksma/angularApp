@@ -10,7 +10,7 @@ export const environment = {
 
 export const globals = {
 
-}
+};
 
 /*
  * For easier debugging in development mode, you can import the following file

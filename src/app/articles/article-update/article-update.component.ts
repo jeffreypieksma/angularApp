@@ -39,8 +39,9 @@ export class ArticleUpdateComponent implements OnInit {
     this.articleService.getArticle(this.id).subscribe(
       (response) => {
         const data = response.json();
-        this.article = data.data;
-        this.updateArticleForm.patchValue({ title: this.article.title, content: this.article.content });
+        //this.article = data.data;
+        const article = data.data;
+        this.updateArticleForm.patchValue({ title: article.title, content: article.content });
       },
       (error) => console.log(error)
     );

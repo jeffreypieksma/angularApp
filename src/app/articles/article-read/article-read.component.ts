@@ -19,7 +19,7 @@ export class ArticleReadComponent implements OnInit {
     return this.getArticle();
   }
 
-  getArticle(id) {
+  getArticle() {
     this.articleService.getArticle(this.id).subscribe(
       (response) => {
         const articles = response.json();
