@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.Auth.getUserDetails(this.loginForm.value).subscribe(
+    this.Auth.authenticate(this.loginForm.value).subscribe(
       (response) => {
         console.log(response);
         this.router.navigate(['admin']);

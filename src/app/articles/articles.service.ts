@@ -40,11 +40,11 @@ export class ArticleService{
 
         return this.http.put(environment.api_url + 'article/update', data, {headers: headers});
     }
-    deleteArticle(id){
-        const headers = new Headers({
-            'Content-Type': 'application/json',
-            'api_token': environment.api_token
-        });
-        return this.http.delete(environment.api_url + 'article/delete', id, {headers: headers});
-    }
+    // deleteArticle(id){
+    //     const headers = new Headers({
+    //         'Content-Type': 'application/json',
+    //         'api_token': environment.api_token
+    //     });
+    //     return this.http.delete(environment.api_url + 'article/delete', id, {headers: headers});
+    // }
 }
