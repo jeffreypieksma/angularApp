@@ -18,6 +18,10 @@ import { ArticleReadComponent } from './articles/article-read/article-read.compo
 import { ArticleUpdateComponent } from './articles/article-update/article-update.component';
 import { ArticleDeleteComponent } from './articles/article-delete/article-delete.component';
 import { ArticleCreateComponent } from './articles/article-create/article-create.component';
+//AUTH
+import { LoginComponent } from './auth/login/login.component';
+import { AdminComponent } from './auth/admin/admin.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
@@ -30,6 +34,8 @@ const appRoutes: Routes = [
   { path: 'server',      component: ServerComponent},
   { path: 'shopping-list',      component: ShoppingListComponent},
   { path: 'recipes',      component: RecipesComponent},
+  { path: 'login',      component: LoginComponent},
+  { path: 'admin',      component: AdminComponent, canActivate: [AuthGuard]},
   { path: '**', component: NotFoundComponent }
 ];
 

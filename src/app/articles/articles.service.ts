@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { environment } from '../../environments/environment';
-import { copyStyles } from '@angular/animations/browser/src/util';
+
 @Injectable()
 
 export class ArticleService{
@@ -23,7 +23,7 @@ export class ArticleService{
         return this.http.get(environment.api_url + 'article/' + id, {headers: headers});
     }
 
-    storeArticle(article){
+    storeArticle(article) {
         const headers = new Headers({
             'Content-Type': 'application/json',
             'api_token': environment.api_token

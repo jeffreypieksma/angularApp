@@ -28,6 +28,11 @@ import { ArticleUpdateComponent } from './articles/article-update/article-update
 import { ArticleDeleteComponent } from './articles/article-delete/article-delete.component';
 import { ArticleCreateComponent } from './articles/article-create/article-create.component';
 import { OpenCloseComponent } from './open-close/open-close.component';
+//auth
+import { LoginComponent } from './auth/login/login.component';
+import { AdminComponent } from './auth/admin/admin.component';
+
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,9 @@ import { OpenCloseComponent } from './open-close/open-close.component';
     ArticleUpdateComponent,
     ArticleDeleteComponent,
     ArticleCreateComponent,
-    OpenCloseComponent
+    OpenCloseComponent,
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +69,7 @@ import { OpenCloseComponent } from './open-close/open-close.component';
   exports: [
     RouterModule
   ],
-  providers: [ArticleService],
+  providers: [ArticleService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
