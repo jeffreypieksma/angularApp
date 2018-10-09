@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         console.log(response);
         this.Auth.user_id = response.json().user_id;
         this.Auth.setLoggedIn(true);
-        this.router.navigate(['admin']);
+        this.router.navigate(['profile']);
       },
       (error) => {
         console.log(error);
