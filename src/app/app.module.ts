@@ -9,16 +9,7 @@ import { MaterialModule } from './material';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ServersComponent } from './servers/servers.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ServerComponent} from './server/server.component';
-
-import { RecipesComponent } from './recipes/recipes.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 //Articles CRUD
 import { ArticlesComponent } from './articles/articles.component';
@@ -27,35 +18,28 @@ import { ArticleReadComponent } from './articles/article-read/article-read.compo
 import { ArticleUpdateComponent } from './articles/article-update/article-update.component';
 import { ArticleDeleteComponent } from './articles/article-delete/article-delete.component';
 import { ArticleCreateComponent } from './articles/article-create/article-create.component';
-import { OpenCloseComponent } from './open-close/open-close.component';
+
 //auth
 import { LoginComponent } from './auth/login/login.component';
 import { AdminComponent } from './auth/admin/admin.component';
 
 import { AuthGuard } from './auth/auth.guard';
+import { ProfileComponent } from './auth/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ServersComponent,
-    ServerComponent,
     NotFoundComponent,
-    RecipesComponent,
-    ShoppingListComponent,
-    ShoppingListEditComponent,
-    RecipeItemComponent,
-    RecipeDetailComponent,
-    RecipeListComponent,
     SidenavComponent,
     ArticlesComponent,
     ArticleReadComponent,
     ArticleUpdateComponent,
     ArticleDeleteComponent,
     ArticleCreateComponent,
-    OpenCloseComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

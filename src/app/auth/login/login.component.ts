@@ -31,13 +31,18 @@ export class LoginComponent implements OnInit {
     this.Auth.authenticate(this.loginForm.value).subscribe(
       (response) => {
         console.log(response);
-        this.router.navigate(['admin']);
+        this.Auth.user_id = response.json().user_id;
         this.Auth.setLoggedIn(true);
+        this.router.navigate(['admin']);
       },
       (error) => {
         console.log(error);
       }
     );
+  }
+
+  onLogout() {
+    window.alert('logged out');
   }
 
 }
