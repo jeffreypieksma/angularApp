@@ -9,9 +9,11 @@
       <div class="form-group">
         <label for="password">Password</label>
         <input type="text" class="form-control" formControlName="password" id="password" required minlength="3">
-      </div>
+      </div> 
+      <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Login</button>
       
-      <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Login</button> 
+      <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+           
     </form>
   </div>
 </div>

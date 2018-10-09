@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private Auth: AuthService, private router: Router) { }
 
+  errorMessage: string;
+
+
   loginForm = new FormGroup({
     email: new FormControl('admin@admin.com', [
       Validators.required,
@@ -35,6 +38,7 @@ export class LoginComponent implements OnInit {
       },
       (error) => {
         console.log(error);
+        this.errorMessage = error._body;
       }
     );
   }

@@ -2,11 +2,6 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { environment } from '../environments/environment';
 
-// interface MyData {
-//   succes: boolean;
-//   message: string;
-// }
-
 @Injectable({
   providedIn: 'root'
 })
@@ -52,6 +47,6 @@ export class AuthService {
       'Content-Type': 'application/json',
       'api_token': environment.api_token
     });
-    return this.http.post(environment.api_url + 'user/details',  user_id {headers: headers});
+    return this.http.post(environment.api_url + 'user/details',  user_id, {headers: headers});
   }
 }
