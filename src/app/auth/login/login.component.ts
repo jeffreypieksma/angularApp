@@ -30,9 +30,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.Auth.authenticate(this.loginForm.value).subscribe(
       (response) => {
-        console.log(response);
-        this.Auth.user_id = response.json().user_id;
-        this.Auth.setLoggedIn(true);
+        this.Auth.setLoggedIn(true, response.json().user_id);
         this.router.navigate(['profile']);
       },
       (error) => {

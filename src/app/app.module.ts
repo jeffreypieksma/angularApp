@@ -21,7 +21,6 @@ import { ArticleCreateComponent } from './articles/article-create/article-create
 
 //auth
 import { LoginComponent } from './auth/login/login.component';
-import { AdminComponent } from './auth/admin/admin.component';
 
 import { AuthGuard } from './auth/auth.guard';
 import { ProfileComponent } from './auth/profile/profile.component';
@@ -38,7 +37,6 @@ import { ProfileComponent } from './auth/profile/profile.component';
     ArticleDeleteComponent,
     ArticleCreateComponent,
     LoginComponent,
-    AdminComponent,
     ProfileComponent
   ],
   imports: [

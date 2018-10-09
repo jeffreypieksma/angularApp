@@ -13,7 +13,6 @@ import { ArticleCreateComponent } from './articles/article-create/article-create
 //auth
 import { LoginComponent } from './auth/login/login.component';
 import { ProfileComponent } from './auth/profile/profile.component';
-import { AdminComponent } from './auth/admin/admin.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
@@ -25,7 +24,6 @@ const appRoutes: Routes = [
   { path: 'articles/delete/:id',      component: ArticleDeleteComponent, canActivate: [AuthGuard]},
   { path: 'login',      component: LoginComponent},
   { path: 'profile',      component: ProfileComponent, canActivate: [AuthGuard]},
-  { path: 'admin',      component: AdminComponent, canActivate: [AuthGuard]},
   { path: '**', component: NotFoundComponent }
 ];
 

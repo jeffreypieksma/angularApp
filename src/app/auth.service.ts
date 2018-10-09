@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { environment } from '../environments/environment';
-import { ArrayType } from '@angular/compiler';
 
 // interface MyData {
 //   succes: boolean;
@@ -15,16 +14,23 @@ import { ArrayType } from '@angular/compiler';
 export class AuthService {
 
   constructor(private http: Http) { }
-  //Must been set to a cookie 
-  private LoggedInStatus = false;
-  public user_id: string;
 
-  get isLoggedIn() {
-    return this.LoggedInStatus;
+  getUserId() {
+    return localStorage.getItem('user_id');
   }
 
-  setLoggedIn(value) {
-    this.LoggedInStatus = value;
+
+  isLoggedIn() {
+    if (localStorage.getItem('user_id')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  setLoggedIn(status, user_id) {
+    localStorage.setItem('loggedIn', status);
+    localStorage.setItem('user_id', user_id);
   }
 
   authenticate(data) {
@@ -36,14 +42,9 @@ export class AuthService {
   }
 
   logout() {
-    this.setLoggedIn(false);
-    this.user_id = '';
+    localStorage.removeItem('loggedIn');
+    localStorage.removeItem('user_id');
   }
-
-  getUserId() {
-    return this.user_id;
-  }
-
   getUserDetails() {
     const user_id = JSON.stringify({user_id: this.getUserId()});
 
