@@ -35,15 +35,21 @@ export class AuthService {
     return this.http.post(environment.api_url + 'login', data, {headers: headers});
   }
 
-  getuserId() {
+  logout() {
+    this.setLoggedIn(false);
+    this.user_id = '';
+  }
+
+  getUserId() {
     return this.user_id;
   }
 
-  getUserDetails(user_id) {
+  getUserDetails() {
+    const user_id = this.getUserId();
     const headers = new Headers({
       'Content-Type': 'application/json',
       'api_token': environment.api_token
     });
-    return this.http.get(environment.api_url + 'user/details/' + user_id {headers: headers});
+    return this.http.get(environment.api_url + 'user/' + user_id {headers: headers});
   }
 }

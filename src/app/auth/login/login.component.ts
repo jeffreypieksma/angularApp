@@ -42,7 +42,8 @@ export class LoginComponent implements OnInit {
   }
 
   onLogout() {
-    window.alert('logged out');
+    this.Auth.logout();
+    this.router.navigate(['login']);
   }
 
 }
