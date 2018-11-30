@@ -9,6 +9,7 @@ import { AuthService } from '../../auth.service';
 export class ProfileComponent implements OnInit {
 
   public user_profile: Array<any>;
+  errorMessage: string;
 
   constructor(private Auth: AuthService) { }
 
@@ -19,12 +20,13 @@ export class ProfileComponent implements OnInit {
   getProfileDetails() {
     this.Auth.getUserDetails().subscribe(
       (response) => {
-        this.user_profile =  response.json().user;
+        console.log(response.json());
+        this.user_profile = response.json();
       },
       (error) => {
         console.log(error);
+        this.errorMessage = error._body;
       }
     );
   }
-
 }

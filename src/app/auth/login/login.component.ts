@@ -17,11 +17,11 @@ export class LoginComponent implements OnInit {
 
 
   loginForm = new FormGroup({
-    email: new FormControl('admin@admin.com', [
+    email: new FormControl('', [
       Validators.required,
       Validators.minLength(3)
     ]),
-    password: new FormControl('admin', [
+    password: new FormControl('', [
       Validators.required,
       Validators.minLength(3)
     ])
@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.Auth.authenticate(this.loginForm.value).subscribe(
       (response) => {
-        this.Auth.setLoggedIn(true, response.json().user_id);
+        const token = response.json().token;
+        this.Auth.setLoggedIn(true, token);
         this.router.navigate(['profile']);
       },
       (error) => {

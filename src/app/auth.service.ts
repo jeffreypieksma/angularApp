@@ -10,43 +10,37 @@ export class AuthService {
 
   constructor(private http: Http) { }
 
-  getUserId() {
-    return localStorage.getItem('user_id');
-  }
-
-
   isLoggedIn() {
-    if (localStorage.getItem('user_id')) {
-      return true;
-    } else {
-      return false;
-    }
+    if (!localStorage.getItem('api_token')){ return false; }
+    return true;
   }
 
-  setLoggedIn(status, user_id) {
+  getToken(){
+    return localStorage.getItem('api_token');
+  }
+
+  setLoggedIn(status, token) {
     localStorage.setItem('loggedIn', status);
-    localStorage.setItem('user_id', user_id);
+    localStorage.setItem('api_token', token);
   }
 
   authenticate(data) {
     const headers = new Headers({
         'Content-Type': 'application/json',
-        'api_token': environment.api_token
     });
     return this.http.post(environment.api_url + 'login', data, {headers: headers});
   }
 
   logout() {
     localStorage.removeItem('loggedIn');
-    localStorage.removeItem('user_id');
+    localStorage.removeItem('api_token');
   }
-  getUserDetails() {
-    const user_id = JSON.stringify({user_id: this.getUserId()});
 
+  getUserDetails() {
     const headers = new Headers({
       'Content-Type': 'application/json',
-      'api_token': environment.api_token
+      'Authorization': 'Bearer ' + localStorage.getItem('api_token')
     });
-    return this.http.post(environment.api_url + 'user/details',  user_id, {headers: headers});
+    return this.http.get(environment.api_url + 'user', {headers: headers});
   }
 }

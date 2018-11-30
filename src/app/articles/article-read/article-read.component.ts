@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../articles.service';
 import { Article } from '../articles.model';
 
+import {ActivatedRoute} from "@angular/router";
+
 @Component({
   selector: 'app-article-read',
   templateUrl: './article-read.component.html',
@@ -10,21 +12,26 @@ import { Article } from '../articles.model';
 })
 export class ArticleReadComponent implements OnInit {
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService, private route: ActivatedRoute) { }
 
   article: any[];
-  id = 2;
+  id: '';
 
   ngOnInit() {
+    this.setArticleId();
     return this.getArticle();
   }
 
+  setArticleId(){
+    this.id = this.route.snapshot.params['id'];
+  }
+
   getArticle() {
+
     this.articleService.getArticle(this.id).subscribe(
       (response) => {
         const articles = response.json();
         this.article = articles.data;
-        console.log(this.article);
       },
       (error) => console.log(error)
     );
